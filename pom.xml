@@ -8,10 +8,10 @@
 		<version>2.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>io.gungor</groupId>
-	<artifactId>configmap-demo</artifactId>
+	<groupId>io.treichenbach</groupId>
+	<artifactId>configmap-reload</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>config-demo</name>
+	<name>configmap-reload</name>
 	<description>Demo project for Spring Boot property live reload from K8S Configmap</description>
 
 	<properties>

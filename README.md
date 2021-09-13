@@ -10,7 +10,7 @@ Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 minikube start --driver=docker
 ```
 
-#### Setup Minikube Acccount
+#### Setup Minikube Account
 ```
 kubectl create rolebinding default-sa-view --clusterrole=view --serviceaccount=default:default --namespace=default
 ```  
@@ -28,7 +28,7 @@ mvn clean install
 
 #### Build and push Docker image
 ```
-docker build -t config-demo .
+docker build -t configmap-reload .
 ```
 
 #### Create or update Configmaps
@@ -47,12 +47,18 @@ kubectl apply -f src/k8s/pod.yaml
 
 #### Forward port to access via localhost
 ```
-kubectl port-forward pod/config-demo 8080:8080
+kubectl port-forward pod/configmap-reload 8080:8080
 ```
 
 #### Check Pod Logs
 ```
-kubectl logs -f pod/config-demo
+kubectl logs -f pod/configmap-reload
+```
+### Clean-Up
+
+#### Delete pod
+```
+kubectl delete pod configmap-reload
 ```
 
 #### Shutdown Minikube

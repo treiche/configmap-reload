@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: config-demo
-  name: config-demo
+    app: configmap-reload
+  name: configmap-reload
 spec:
   containers:
-    - image: config-demo:latest
-      name: config-demo
+    - image: configmap-reload:latest
+      name: configmap-reload
       ports:
         - containerPort: 8080
       imagePullPolicy: IfNotPresent

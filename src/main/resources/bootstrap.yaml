@@ -1,6 +1,6 @@
 spring:
   application:
-    name: config-demo
+    name: configmap-reload
   cloud:
     kubernetes:
       reload:
