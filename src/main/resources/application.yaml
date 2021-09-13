@@ -1,0 +1,5 @@
+config:
+  value: fallback value
+
+reload-bean:
+  value: fallback bean value

@@ -5,10 +5,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "bean" )
+@ConfigurationProperties(prefix = "config")
 @Data
-public class Config {
+public class SpringConfigProperties {
 
-    private String testvalue;
+    private String value;
 
 }

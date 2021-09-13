@@ -2,14 +2,13 @@ package io.gungor.kubernetesliveconfigexample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableScheduling
 public class KubernetesLiveConfigExampleApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(KubernetesLiveConfigExampleApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(KubernetesLiveConfigExampleApplication.class, args);
+    }
 }
