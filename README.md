@@ -1,7 +1,8 @@
 ### Preconditions
-Readings: https://docs.spring.io/spring-cloud-kubernetes/docs/current/reference/html/
-Download minikube: https://github.com/kubernetes/minikube/releases   
-Install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl
+Readings: 
+[Spring Cloud Kubernetes Docs](https://docs.spring.io/spring-cloud-kubernetes/docs/current/reference/html/)   
+Download [minikube](https://github.com/kubernetes/minikube/releases).   
+Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl) 
 
 ### Local Start-Up
 #### Start Minikube
@@ -30,7 +31,10 @@ mvn clean install
 docker build -t config-demo .
 ```
 
-#### Apply Configmaps
+#### Create or update Configmaps
+Changing the mounted ConfigMap article-protection-config.yaml needs some time to be 
+applied due to a defined TTL. Please check the 
+[docs](https://kubernetes.io/docs/concepts/configuration/configmap/#mounted-configmaps-are-updated-automatically) for more information. 
 ```
 kubectl apply -f src/k8s/config-map.yaml
 kubectl apply -f src/k8s/article-protection-config.yaml
@@ -41,7 +45,7 @@ kubectl apply -f src/k8s/article-protection-config.yaml
 kubectl apply -f src/k8s/pod.yaml
 ```
 
-#### Foreard port to access via http://127.0.0.1:8080/
+#### Forward port to access via localhost
 ```
 kubectl port-forward pod/config-demo 8080:8080
 ```
