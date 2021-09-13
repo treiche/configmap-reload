@@ -38,4 +38,4 @@ kubectl apply -f src/k8s/article-protection-config.yaml
 `kubectl logs -f pod/config-demo`
 
 #### Shutdown Minikube
-`minikube stop
+`minikube stop`
