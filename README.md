@@ -1,5 +1,6 @@
 ### Preconditions
-Download minikube from here: https://github.com/kubernetes/minikube/releases   
+Readings: https://docs.spring.io/spring-cloud-kubernetes/docs/current/reference/html/
+Download minikube: https://github.com/kubernetes/minikube/releases   
 Install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl
 
 ### Local Start-Up
