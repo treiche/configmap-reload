@@ -1,7 +1,8 @@
-download minikube from here: https://github.com/kubernetes/minikube/releases   
+### Preconditions
+Download minikube from here: https://github.com/kubernetes/minikube/releases   
+Install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl
 
-Then install kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl
-
+### Local Start-Up
 #### Start Minikube
 ```
 minikube start --driver=docker
