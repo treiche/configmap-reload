@@ -1,6 +1,6 @@
-package io.gungor.kubernetesliveconfigexample.config;
+package io.treichenbach.configmapreload.config;
 
-import io.gungor.kubernetesliveconfigexample.bean.ReloadBean;
+import io.treichenbach.configmapreload.bean.ReloadBean;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

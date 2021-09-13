@@ -1,8 +1,8 @@
-package io.gungor.kubernetesliveconfigexample.service;
+package io.treichenbach.configmapreload.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.gungor.kubernetesliveconfigexample.aticleprotection.ArticleProtection;
-import io.gungor.kubernetesliveconfigexample.aticleprotection.Feature;
+import io.treichenbach.configmapreload.aticleprotection.ArticleProtection;
+import io.treichenbach.configmapreload.aticleprotection.Feature;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;

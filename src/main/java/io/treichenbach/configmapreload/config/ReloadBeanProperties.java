@@ -1,4 +1,4 @@
-package io.gungor.kubernetesliveconfigexample.config;
+package io.treichenbach.configmapreload.config;
 
 import lombok.Data;
 

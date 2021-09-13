@@ -1,4 +1,4 @@
-package io.gungor.kubernetesliveconfigexample.aticleprotection;
+package io.treichenbach.configmapreload.aticleprotection;
 
 import lombok.Data;
 

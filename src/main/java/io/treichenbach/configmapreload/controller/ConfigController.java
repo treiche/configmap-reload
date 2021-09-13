@@ -1,8 +1,8 @@
-package io.gungor.kubernetesliveconfigexample.controller;
+package io.treichenbach.configmapreload.controller;
 
-import io.gungor.kubernetesliveconfigexample.bean.ReloadBean;
-import io.gungor.kubernetesliveconfigexample.config.SpringConfigProperties;
-import io.gungor.kubernetesliveconfigexample.service.EntityAvailability;
+import io.treichenbach.configmapreload.bean.ReloadBean;
+import io.treichenbach.configmapreload.config.SpringConfigProperties;
+import io.treichenbach.configmapreload.service.EntityAvailability;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

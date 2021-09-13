@@ -1,6 +1,6 @@
-package io.gungor.kubernetesliveconfigexample.bean;
+package io.treichenbach.configmapreload.bean;
 
-import io.gungor.kubernetesliveconfigexample.config.ReloadBeanProperties;
+import io.treichenbach.configmapreload.config.ReloadBeanProperties;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
