@@ -1,20 +1,22 @@
 package io.treichenbach.configmapreload.bean;
 
-import io.treichenbach.configmapreload.config.ReloadBeanProperties;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ReloadBean {
 
-    private final ReloadBeanProperties reloadBeanProperties;
+    private final ReloadBeanConfig reloadBeanConfig;
 
-    public ReloadBean(final ReloadBeanProperties reloadBeanProperties) {
-        log.info("[{}] starting up", reloadBeanProperties);
-        this.reloadBeanProperties = reloadBeanProperties;
+    public ReloadBean(final ReloadBeanConfig reloadBeanConfig) {
+        this.reloadBeanConfig = reloadBeanConfig;
+        log.info("[{}] starting up", this.reloadBeanConfig);
     }
 
-    public String getValue() {
-        log.info(reloadBeanProperties.toString());
-        return reloadBeanProperties.getValue();
+    public ReloadBeanConfig getConfig() {
+        return this.reloadBeanConfig;
+    }
+
+    public static ReloadBean create(ReloadBeanConfig reloadBeanConfig) {
+        return new ReloadBean(reloadBeanConfig);
     }
 }

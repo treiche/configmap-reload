@@ -4,14 +4,6 @@ metadata:
   name: config-map
 data:
   application.yaml: |-
-    config:
-      value: initial config-map value changed
-    reload-bean:
-      value: initial config-map bean value
-    ---
-    spring:
-      profiles: kubernetes
-    config:
-      value: override value
-    reload-bean:
-      value: override bean value
+#    config:
+#      value: config-map value
+#      beanvalue: config-map bean value

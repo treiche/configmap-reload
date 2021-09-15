@@ -1,6 +1,5 @@
 package io.treichenbach.configmapreload.aticleprotection;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.List;
@@ -8,8 +7,7 @@ import java.util.List;
 @Data
 public class Activation {
 
-    @JsonProperty("config_skus")
-    private List<String> configSkus;
+    private List<String> data;
     private String end;
     private String start;
 }

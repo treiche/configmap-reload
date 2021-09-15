@@ -10,6 +10,12 @@ Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 minikube start --driver=docker
 ```
 
+#### Switch the kubernetes context to minikube
+```
+kubectl reloadBeanConfig get-contexts // get all context
+kubectl reloadBeanConfig use-context [CONTEXT_NAME]
+```
+
 #### Setup Minikube Account
 ```
 kubectl create rolebinding default-sa-view --clusterrole=view --serviceaccount=default:default --namespace=default
@@ -32,12 +38,13 @@ docker build -t configmap-reload .
 ```
 
 #### Create or update Configmaps
-Changing the mounted ConfigMap article-protection-config.yaml needs some time to be 
+Changing the mounted ConfigMap article-protection-reloadBeanConfig.yaml needs some time to be 
 applied due to a defined TTL. Please check the 
 [docs](https://kubernetes.io/docs/concepts/configuration/configmap/#mounted-configmaps-are-updated-automatically) for more information. 
 ```
-kubectl apply -f src/k8s/config-map.yaml
-kubectl apply -f src/k8s/article-protection-config.yaml
+kubectl apply -f src/k8s/reloadBeanConfig-map.yaml
+kubectl apply -f src/k8s/mounted-reloadBeanConfig-map.yaml
+kubectl apply -f src/k8s/article-protection-reloadBeanConfig.yaml
 ```
 
 #### Deploy the Pod

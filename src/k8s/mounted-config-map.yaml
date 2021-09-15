@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mounted-config-map
+data:
+  application-override.yaml: |-
+    config:
+      value: mounted config-map override value
+      beanvalue: mounted config-map override bean value

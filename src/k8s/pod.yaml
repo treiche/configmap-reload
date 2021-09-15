@@ -11,13 +11,21 @@ spec:
       ports:
         - containerPort: 8080
       imagePullPolicy: IfNotPresent
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: kubernetes,override
       volumeMounts:
         - mountPath: /opt/article-protection-config
           name: article-protection-config-volume
+        - mountPath: /opt/mounted-config-map
+          name: mounted-config-map-volume
   volumes:
     - name: article-protection-config-volume
       configMap:
         name: article-protection-config
+    - name: mounted-config-map-volume
+      configMap:
+        name: mounted-config-map
   restartPolicy: Never
                   
           

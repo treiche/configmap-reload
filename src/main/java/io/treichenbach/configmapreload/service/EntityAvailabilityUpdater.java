@@ -19,14 +19,15 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 @Data
-public class EntityAvailability {
+public class EntityAvailabilityUpdater {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
-    private static final String FEATURE = "DISABLE_RECO";
+    private static final String FEATURE = "NEW_FEATURE";
+    private static final String MOUNTED_FILE_PATH = "/opt/article-protection-config/protected-articles.json";
 
     private List<String> unavailableEntities;
 
-    public EntityAvailability() {
+    public EntityAvailabilityUpdater() {
         unavailableEntities = getEntitiesFromConfigMap();
     }
 
@@ -59,19 +60,14 @@ public class EntityAvailability {
 
         try {
             final String protectedArticles =
-                    new String(Files.readAllBytes(Paths.get("/opt/article-protection-config/protected-articles.json")));
+                    new String(Files.readAllBytes(Paths.get(MOUNTED_FILE_PATH)));
 
             final ArticleProtection articleProtection = MAPPER.readValue(protectedArticles, ArticleProtection.class);
             final Optional<Feature> feature = articleProtection.getFeatures().stream()
                                                                .filter(f -> FEATURE.equals(f.getFeature()))
                                                                .collect(Collectors.toList()).stream().findFirst();
 
-            feature.ifPresent(f -> f.getActivations().forEach(activation -> {
-                final List<String> entities = activation.getConfigSkus().stream()
-                                                        .map(sku -> "ern:product::" + sku)
-                                                        .collect(Collectors.toList());
-                allEntities.addAll(entities);
-            }));
+            feature.ifPresent(f -> f.getActivations().forEach(activation -> allEntities.addAll(activation.getData())));
 
         } catch (IOException e) {
             log.warn("unable to get protected articles from ConfigMap", e);
