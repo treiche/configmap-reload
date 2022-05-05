@@ -6,7 +6,7 @@ metadata:
   name: configmap-reload
 spec:
   containers:
-    - image: configmap-reload:latest
+    - image: configmap-reload:1
       name: configmap-reload
       ports:
         - containerPort: 8080

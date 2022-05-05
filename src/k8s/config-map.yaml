@@ -4,6 +4,6 @@ metadata:
   name: config-map
 data:
   application.yaml: |-
-#    config:
-#      value: config-map value
-#      beanvalue: config-map bean value
+    config:
+      value: changed
+      beanvalue: config-map bean value

@@ -2,6 +2,7 @@ package io.treichenbach.configmapreload.config;
 
 import io.treichenbach.configmapreload.bean.ReloadBeanConfig;
 import io.treichenbach.configmapreload.bean.ReloadBean;
+import io.treichenbach.configmapreload.service.JobScheduler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
@@ -26,5 +27,10 @@ public class BeanConfiguration {
         reloadBeanConfig.setValue(springConfigProperties.getBeanvalue());
 
         return ReloadBean.create(reloadBeanConfig);
+    }
+
+    @Bean
+    public JobScheduler jobScheduler() {
+        return new JobScheduler();
     }
 }
