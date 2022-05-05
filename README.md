@@ -12,8 +12,8 @@ minikube start --driver=docker
 
 #### Switch the kubernetes context to minikube
 ```
-kubectl reloadBeanConfig get-contexts // get all context
-kubectl reloadBeanConfig use-context [CONTEXT_NAME]
+kubectl config get-contexts // get all context
+kubectl config use-context [CONTEXT_NAME]
 ```
 
 #### Setup Minikube Account
@@ -38,7 +38,7 @@ docker build -t configmap-reload .
 ```
 
 #### Create or update Configmaps
-Changing the mounted ConfigMap article-protection-reloadBeanConfig.yaml needs some time to be 
+Changing the mounted ConfigMap article-protection-config.yaml needs some time to be 
 applied due to a defined TTL. Please check the 
 [docs](https://kubernetes.io/docs/concepts/configuration/configmap/#mounted-configmaps-are-updated-automatically) for more information. 
 ```
