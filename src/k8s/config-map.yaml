@@ -5,5 +5,5 @@ metadata:
 data:
   application.yaml: |-
     config:
-      value: changed
-      beanvalue: config-map bean value
+      value: hi
+      beanvalue: hallo

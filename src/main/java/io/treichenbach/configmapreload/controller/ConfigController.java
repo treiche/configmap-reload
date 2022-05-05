@@ -1,10 +1,12 @@
 package io.treichenbach.configmapreload.controller;
 
-import io.treichenbach.configmapreload.bean.ReloadBeanConfig;
 import io.treichenbach.configmapreload.bean.ReloadBean;
+import io.treichenbach.configmapreload.bean.ReloadBeanConfig;
 import io.treichenbach.configmapreload.config.SpringConfigProperties;
 import io.treichenbach.configmapreload.service.EntityAvailabilityUpdater;
+import io.treichenbach.configmapreload.service.JobScheduler;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,8 @@ public class ConfigController {
     private final ReloadBean reloadBean;
     private final ConfigurableApplicationContext context;
     private final EntityAvailabilityUpdater entityAvailabilityUpdater;
+    @Autowired
+    private JobScheduler jobScheduler;
 
     public ConfigController(final SpringConfigProperties springConfigProperties, final ReloadBean reloadBean,
                             final ConfigurableApplicationContext context, final EntityAvailabilityUpdater entityAvailabilityUpdater) {
@@ -45,8 +49,11 @@ public class ConfigController {
     @GetMapping(value = "/springconfig")
     public List<String> reloadConfig() {
         log.info("");
-        log.info("config.value:" + springConfigProperties.getValue());
-        return List.of("Value: " + springConfigProperties.getValue());
+        log.info("SpringConfigProperties:" + springConfigProperties);
+        log.info("JobScheduler.SpringConfigProperties: {}", jobScheduler.getSpringConfigProperties());
+
+        return List.of("SpringConfigProperties: " + springConfigProperties,
+                       "JobScheduler.SpringConfigProperties: " + jobScheduler.getSpringConfigProperties());
     }
 
     @ResponseStatus(HttpStatus.OK)

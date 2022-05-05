@@ -21,4 +21,7 @@ public class JobScheduler {
 
     }
 
+    public SpringConfigProperties getSpringConfigProperties() {
+        return springConfigProperties;
+    }
 }
