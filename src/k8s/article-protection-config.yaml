@@ -4,8 +4,8 @@ metadata:
   name: article-protection-config
 data:
   protected-articles.json: "{\n  \"features\": [\n    {\n      \"activations\": [\n\
-    \        {\n          \"data\": [\n            \"JOC11A000-001\",\n   \
-    \         \"JOC11A000-002\",\n            \"JOC11A000-003\",\n            \"JOC11A000-004\"\
+    \        {\n          \"data\": [\n            \"SKU1\",\n   \
+    \         \"SKU2\",\n            \"SKU3\",\n            \"SKU4\"\
     \n          ],\n          \"end\": \"2023-01-01T00:00:00Z\"\
     ,\n          \"start\": \"2021-01-01T00:00:00Z\"\n        }\n      ],\n      \"\
     feature\": \"NEW_FEATURE\"\n    }\n  ]\n}\n"
